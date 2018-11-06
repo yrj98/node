@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Home Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        color: #1C4E8A;
+      }
+      .sidenav {
+        height: 100%;
+        width: 150px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #1C4E8A;
+        overflow-x: hidden;
+        padding-top: 40px;
+      }
+      .sidenav a {
+        padding: 20px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #5E5E5E;
+        display: block;
+        margin-left: 20px;
+      }
+      .sidenav a:hover {
+        color: #aaaaaa;
+      }
+      #user {
+        color: #777777;
+      }
+      #user:hover {
+        color: #aaaaaa;
+      }
+      .main {
+        margin-left: 150px;
+        padding: 0px 10px;
+        font-size: 20px;
+      }
+      .title {
+        margin-top: 80px;
+      }
+      #order {
+        margin-left: 460px;
+        margin-top: 60px;
+      }
+      .mainform {
+        margin-top: 10px;
+      }
+      input[type=text], input[type=date], input[type=date] {
+        padding: 0 5px;
+        height: 30px;
+      }
+      #submit {
+        background-color: #1C4E8A;
+        border: none;
+        color: #cccccc;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-top: 15px;
+        margin-left: 140px;
+      }
+      #submit:hover {
+        color: #eeeeee;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sidenav">
+      <a id="user">User</a>
+      <a href="http://localhost:1337/admin" id="admin">Admin</a>
+      <a href="http://localhost:1337/about" id="about">About</a>
+    </div>
+    <div class="title" style="text-align: center">
+      <h1 style="font-size: 50px">Place Order</h1>
+    </div>
+    <div class="order" id="order">
+      <form action="/neworder" method="post">
+        <b>Customer ID :  </b><input type="text" placeholder="Enter Value..." name="cid" class="mainform" id="cid" required />
+        <br>
+        <b>Salesman ID :  </b><input type="text" placeholder="Enter Value..." name="sid" class="mainform" id="sid" required />
+        <br>
+        <b>Product ID :  </b><input type="text" placeholder="Enter Value..." name="pid" class="mainform" id="pid" required />
+        <br>
+        <b>Order Date :  </b><input type="date" placeholder="YYYY-MM-DD" name="date" class="mainform" id="date" required />
+        <br>
+        <b>Quantity :  </b><input type="number" value="1" name="quantity" class="mainform" id="quantity" required />
+        <br><br>
+        <input type="submit" value="Submit" class="mainlogin" id="submit" />
+      </form>
+    </div>
+  </body>
+</html>
